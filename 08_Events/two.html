@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNC ANC ASYNC - 1</title>
+</head>
+<body>
+    <h1>THE ARCHER</h1>
+    <button id = "stop">Stop</button>
+</body>
+<script>
+    //handler - function that has no name
+    //setTimeout returns a number and it generally means that after 2sec or the time mentioned the work will go on
+    //setInterval - helps to do something within a interval
+    const sayName = function(){
+        console.log("Archer"); 
+        }
+    setTimeout(sayName,2000); //dont call the function pass a reference to the function
+    
+    const changehead = function(){
+        document.querySelector('h1').innerHTML = "THE CODER"
+    }
+    const changes = setTimeout(changehead,2000);
+    
+    //To stop the timeout function
+    document.querySelector('#stop').
+    addEventListener('click',function(){
+        clearTimeout(changes);
+        console.log("The change has stopped")
+    });
+    
+
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Part 4</title>
+</head>
+<body style = "background-color: #212121;color : #ffff">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+    
+</body>
+<script>
+    function addLang(lname){
+        const li = document.createElement("li");
+        li.innerHTML = `${lname}`;
+        document.querySelector('.language').appendChild(li)
+    }
+    addLang("python")
+    addLang("typescript")
+
+
+    function addOptiLang(lname){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lname))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addOptiLang("c++")
+    addOptiLang("c")
+
+    //Edit
+
+    const seclang=document.querySelector("li:nth-child(2)")
+    const newli = document.createElement('li')
+    newli.textContent = "Java"
+    seclang.replaceWith(newli)
+
+    //edit
+    const firstlang = document.querySelector("li:first-child")
+    firstlang.outerHTML = "<li>Typescript</li>"
+    //remove
+    const lastlang = document.querySelector("li:last-child");
+    lastlang.remove()
+    
+    seclang.appendChild(document.createTextNode("OOPS"))
+
+</script>
+</html>
