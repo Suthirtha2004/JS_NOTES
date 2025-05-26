@@ -1,4 +1,4 @@
-<!-- # JAVASCRIPT AND CLASSES
+# JAVASCRIPT AND CLASSES
 
 JAVASCRIPT is a prototype - based language.
 Classes are like syntactic sugar behind the scenes its just prototyping.
@@ -22,4 +22,11 @@ We can use services using OOPS .
 - Abstraction
 - Encapsulation
 - Inheritance
-- Polymorphism -->
+- Polymorphism
+
+## JAVASCRIPT PROTOTYPE
+
+Prototype is a behaviour that let us use the new and other keywords.
+
+Array --> Object ---> NULL
+String ----> Object ---->NULL
