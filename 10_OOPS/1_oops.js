@@ -26,13 +26,17 @@ function myuser(username,loginC,isloggedIn){
     this.username = username ; //The parameter passed will be set to the username only
     this.loginC = loginC;
     this.isloggedIn = isloggedIn;
-
+    
+    this.greeting = function(){
+        console.log(`Welcome ${this.username} to Github`)
+    }
     return this; //The other objects can access this
 }
 
-const UserOne = myuser("Archer",50,true);
-console.log(UserOne)
+const UserOne =  new myuser("Archer",50,true);
+//const UserTwo = myuser("Lana", 30, false); //USer two overrides if not written "new" keyword
+const UserTwo = new myuser("A",15,false)
+console.log(UserOne.constructor)
 console.log(UserOne.isloggedIn);
-const UserTwo = new myuser("Lana", 30, false);
 console.log(UserTwo);
 console.log(UserTwo.isloggedIn);
