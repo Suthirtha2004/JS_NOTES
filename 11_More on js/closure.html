@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Closure</title>
+</head>
+<body style = "background-color: #313131;">
+    <button id = "orange">Orange</button>
+    <button id ="green">Green</button>
+    
+</body>
+<script>
+//     function init() {
+//             let name = "Knight";
+//             function displayName() {
+//                 console.log(name); 
+//             }
+//             displayName();
+//      }
+// init();
+
+//Lexical Scoping -  A function inside function has access to the variables of the parent functiom
+function outer(){
+    let username = "Archer";
+    //console.log(secret) - A parent function cannnot access the variables of the child functions
+    function inner(){
+        let secret = "ABC";
+        console.log("Inner",username);
+    }
+
+    function inner2(){
+        console.log("Inner 2",username);
+        //console.log(secret)  A child function has no access to the local variables of other child functions
+    }
+    inner()
+    inner2()
+
+}
+outer()
+//console.log(username)
+
+
+//Closure 
+function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName;
+ }
+
+const myFunc = makeFunc(); // The whole lexical scoping goes to the memory
+myFunc();
+
+
+</script>
+<script>
+    function ClickHandler (color) {
+        //document.body.style.backgroundColor = `${color}`;
+        //Closure and Lexical scoping 
+        return function(){
+            document.body.style.backgroundColor = `${color}`;
+        }
+    }
+
+    document.getElementById('orange').onclick = ClickHandler("orange");
+    document.getElementById('green').onclick = ClickHandler("green");
+</script>
+</script>
+</html>
